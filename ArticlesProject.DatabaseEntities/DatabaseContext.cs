@@ -28,13 +28,6 @@ namespace ArticlesProject.DatabaseEntities
 			{
 				optionsBuilder.UseSqlServer(@"data source=WINVP185097-Q6E; initial catalog=ArticlesDb;persist security info=True;user id=sa;password=G7oose@1234567;");
 			}
-
-			List<Model> rows = null;
-
-			this.LoadStoredProc("dbo.ListAll")
-			   .AddParam("limit", 300L)
-			   .AddParam("limitOut", out IOutParam<long> limitOut)
-			   .Exec(r => rows = r.ToList<Model>());
 		}
 	}
 }
